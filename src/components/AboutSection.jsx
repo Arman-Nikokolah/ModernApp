@@ -1,5 +1,5 @@
 import React from "react";
-import armanimage from "../img/arman.jpg";
+import armanimage from "../img/arman.jpeg";
 
 const AboutSection = () => {
   return (
@@ -7,15 +7,15 @@ const AboutSection = () => {
       <div className="description">
         <div className="title">
           <div className="hide">
-            <h2>We work to make</h2>
+            <h2 className="header"> I'm Arman Nikookolah </h2>
           </div>
           <div className="hide">
-            <h2>
-              Your <span style={{ color: "#28d997" }}> dreams</span> come
+            <h2 className="header">
+              I'm <span style={{ color: "#28d997" }}> Programmer </span> Come
             </h2>
           </div>
           <div className="hide">
-            <h2> true.</h2>
+            <h2 className="header"> True.</h2>
           </div>
         </div>
         <p className="paragraph">
