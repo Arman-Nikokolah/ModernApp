@@ -6,19 +6,33 @@ import love from "../img/lover.jpg";
 import dysor from "../img/victory.jpg";
 import Helmet from "react-helmet";
 import { motion } from "framer-motion";
-import { pageAnimation } from "../Animation";
-
+import {
+  lineAnimate,
+  SliderAnimation,
+  pageAnimation,
+  fade,
+  ImageAnimation,
+  Slider,
+} from "../Animation";
 const OurWorks = () => {
   return (
     <Work exit="exit" variants={pageAnimation} initial="hidden" animate="show">
       <Helmet>
         <title>OurWorker</title>
       </Helmet>
+      <motion.div variants={SliderAnimation}>
+        <Framer1 variants={Slider}></Framer1>
+        <Framer2 variants={Slider}></Framer2>
+        <Framer3 variants={Slider}></Framer3>
+      </motion.div>
+
       <Movie>
-        <h2>The Fitness</h2>
-        <div className="line"></div>
+        <motion.h2 variants={fade}>The Fitness</motion.h2>
+        <motion.div variants={lineAnimate} className="line"></motion.div>
         <Link to="/work/fitness">
-          <img src={fitness} alt="fitnes" />
+          <Hide>
+            <motion.img variants={ImageAnimation} src={fitness} alt="fitnes" />
+          </Hide>
         </Link>
       </Movie>
       <Movie>
@@ -75,4 +89,27 @@ const Movie = styled.div`
     margin-bottom: 5rem;
   }
 `;
+
+const Hide = styled.div`
+  overflow: hidden;
+`;
+
+const Framer1 = styled(motion.div)`
+  position: fixed;
+  top: 10%;
+  left: 0%;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  background-color: #f1f1f1;
+`;
+
+const Framer2 = styled(Framer1)`
+  background-color: #2aadc4;
+`;
+
+const Framer3 = styled(Framer1)`
+  background-color: #7f1eac;
+`;
+
 export default OurWorks;

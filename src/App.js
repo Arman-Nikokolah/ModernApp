@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet";
 import Navbar from "./components/Nav";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import Waves from "./components/Wave";
 
 function App() {
   const location = useLocation();
