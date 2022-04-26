@@ -1,29 +1,33 @@
 import React from "react";
 import armanimage from "../img/arman.jpg";
+import { motion } from "framer-motion";
 import { StyledAbout, Description, Hide, Image } from "../style";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
     <StyledAbout>
       <Description>
-        <div className="title">
+        <motion.div className="title">
           <Hide>
-            <h2 className="header"> I'm Arman Nikookolah </h2>
+            <motion.h2 className="header"> I'm Arman Nikookolah </motion.h2>
           </Hide>
           <Hide>
-            <h2 className="header">
+            <motion.h2 className="header">
               I'm <span style={{ color: "#28d997" }}> Programmer </span>
-            </h2>
+            </motion.h2>
           </Hide>
           <Hide>
-            <h2 className="header">Come True.</h2>
+            <motion.h2 className="header">Come True.</motion.h2>
           </Hide>
-        </div>
+        </motion.div>
         <p className="paragraph">
           Contact us for any photography and videography ideas that you have. We
           have professionlas with amazing skills to help you achieve it.
         </p>
-        <button className="btn">Contact us</button>
+        <Link to="/contactus">
+          <button className="btn">Contact us</button>
+        </Link>
       </Description>
       <Image>
         <img src={armanimage} alt="armanimage" className="images" />

@@ -5,9 +5,12 @@ import fitness from "../img/fitness.jpg";
 import love from "../img/lover.jpg";
 import dysor from "../img/victory.jpg";
 import Helmet from "react-helmet";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../Animation";
+
 const OurWorks = () => {
   return (
-    <Work>
+    <Work exit="exit" variants={pageAnimation} initial="hidden" animate="show">
       <Helmet>
         <title>OurWorker</title>
       </Helmet>
@@ -44,7 +47,7 @@ const OurWorks = () => {
   );
 };
 
-const Work = styled.div`
+const Work = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 5rem 2rem;

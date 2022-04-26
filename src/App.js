@@ -6,19 +6,23 @@ import ContactUs from "./pages/ContactUs";
 import MovieDetails from "./pages/MovieDetails";
 import { Helmet } from "react-helmet";
 import Navbar from "./components/Nav";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
   return (
     <div className="App">
       <GlobalStyled />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<AboutUS />} exact />
-        <Route path="/work" element={<OurWorks />} exact />
-        <Route path="/work/:id" element={<MovieDetails />} />
-        <Route path="/contactus" element={<ContactUs />} exact />
-      </Routes>
+      <AnimatePresence exitBeforeEnter>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<AboutUS />} exact />
+          <Route path="/work" element={<OurWorks />} exact />
+          <Route path="/work/:id" element={<MovieDetails />} />
+          <Route path="/contactus" element={<ContactUs />} exact />
+        </Routes>
+      </AnimatePresence>
       <Helmet>
         <title>AboutPage</title>
       </Helmet>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-
+import { motion } from "framer-motion";
+import { pageAnimation } from "../Animation";
 import { MovieState } from "../movieState";
 import styled from "styled-components";
 import Helmet from "react-helmet";
@@ -18,7 +19,12 @@ const MovieDetails = () => {
   }, [movies, url]);
 
   return (
-    <>
+    <motion.div
+      exit="exit"
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+    >
       <Helmet>
         <title>MovieDetails</title>
       </Helmet>
@@ -42,7 +48,7 @@ const MovieDetails = () => {
           </ImageStyle>
         </Detailes>
       )}
-    </>
+    </motion.div>
   );
 };
 

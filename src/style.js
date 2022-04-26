@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const StyledAbout = styled.div`
+export const StyledAbout = styled(motion.div)`
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -27,7 +28,7 @@ export const Image = styled.div`
   }
 `;
 
-export const Hide = styled.div`
+export const Hide = styled(motion.div)`
   overflow: hidden;
   line-height: 5rem;
 `;
