@@ -20,7 +20,7 @@ button {
     color: white;
     transition: all 0.5s ease;
     &:hover {
-        background-color: #28d997;
+        background-color: #23d997;
         color: white;
     }
 }
