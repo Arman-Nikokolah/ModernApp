@@ -1,5 +1,5 @@
 // Import Images
-import fit from "./img/fitness.jpg";
+import fit from "./img/boxing.jpeg";
 import comelove from "./img/love.jpg";
 import racer from "./img/victory.jpg";
 import fit2 from "./img/dave.jpg";
