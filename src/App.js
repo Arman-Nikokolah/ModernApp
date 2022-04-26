@@ -20,7 +20,7 @@ function App() {
         <Route path="/contactus" element={<ContactUs />} exact />
       </Routes>
       <Helmet>
-        <title>Portfilo</title>
+        <title>AboutPage</title>
       </Helmet>
     </div>
   );

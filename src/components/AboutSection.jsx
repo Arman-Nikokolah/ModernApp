@@ -1,6 +1,7 @@
 import React from "react";
 import armanimage from "../img/arman.jpg";
 import { StyledAbout, Description, Hide, Image } from "../style";
+
 const AboutSection = () => {
   return (
     <StyledAbout>

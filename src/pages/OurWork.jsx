@@ -4,10 +4,13 @@ import styled from "styled-components";
 import fitness from "../img/fitness.jpg";
 import love from "../img/lover.jpg";
 import dysor from "../img/victory.jpg";
-
+import Helmet from "react-helmet";
 const OurWorks = () => {
   return (
     <Work>
+      <Helmet>
+        <title>OurWorker</title>
+      </Helmet>
       <Movie>
         <h2>The Fitness</h2>
         <div className="line"></div>

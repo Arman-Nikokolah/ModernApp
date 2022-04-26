@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { Image } from "../style";
+
 import { MovieState } from "../movieState";
 import styled from "styled-components";
+import Helmet from "react-helmet";
+
 const MovieDetails = () => {
   const locations = useLocation();
   const url = locations.pathname;
@@ -17,6 +19,9 @@ const MovieDetails = () => {
 
   return (
     <>
+      <Helmet>
+        <title>MovieDetails</title>
+      </Helmet>
       {movie && (
         <Detailes>
           <Heading>
