@@ -68,15 +68,15 @@ export const ImageAnimation = {
 export const fade = {
   hidden: {
     opacity: 0,
-    x: -200,
+    x: 300,
   },
   show: {
     opacity: 1,
     x: 0,
     transition: {
       duration: 0.75,
-      ease: "easeOut",
-      staggerChildren: 0.25,
+      when: "beforeChildren",
+      staggerChildren: 0.8,
     },
   },
 };

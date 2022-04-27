@@ -1,24 +1,44 @@
 import React from "react";
 import { StyledAbout, Description, Image } from "../style";
-
 // import icons
-
 import clock from "../img/clock.svg";
 import diaphragm from "../img/diaphragm.svg";
 import money from "../img/money.svg";
 import teamwork from "../img/teamwork.svg";
 import milkway from "../img/img (40).webp";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
+import { useAnimation, motion } from "framer-motion";
+import { fade } from "../Animation";
 
 const ServiceSection = () => {
+  const [element, view] = useInView({ threshold: 0.3 });
+  const controls = useAnimation();
+
+  if (view) {
+    controls.start("show");
+  } else {
+    controls.start("hidden");
+  }
+
   const altimage = "clock";
   return (
     <Services>
       <Description>
-        <h2>
+        <motion.h2
+          animate={controls}
+          initial="hidden"
+          ref={element}
+          variants={fade}
+        >
           High <span style={{ color: "#28d997" }}> quality </span> Services{" "}
-        </h2>
-        <Cards>
+        </motion.h2>
+        <Cards
+          ref={element}
+          animate={controls}
+          initial="hidden"
+          variants={fade}
+        >
           <div className="card">
             <div className="icon">
               <img src={clock} alt={altimage} />
@@ -69,7 +89,7 @@ const Services = styled(StyledAbout)`
   }
 `;
 
-const Cards = styled.div`
+const Cards = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
 `;
