@@ -7,6 +7,13 @@ export const GlobalStyled = createGlobalStyle`
     box-sizing: border-box;
 }
 
+html { 
+    @media(max-width : 1700px) {
+        font-size: 75%;
+    }
+    
+}
+
 body {
     background: #1b1b1b;
 }
@@ -26,7 +33,7 @@ button {
 }
 
 h2 {
-    color: white;
+    
     font-weight: lighter;
     font-size: 3rem;
 }

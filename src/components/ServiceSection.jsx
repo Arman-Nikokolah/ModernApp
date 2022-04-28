@@ -25,20 +25,10 @@ const ServiceSection = () => {
   return (
     <Services>
       <Description>
-        <motion.h2
-          animate={controls}
-          initial="hidden"
-          ref={element}
-          variants={fade}
-        >
+        <motion.h2>
           High <span style={{ color: "#28d997" }}> quality </span> Services{" "}
         </motion.h2>
-        <Cards
-          ref={element}
-          animate={controls}
-          initial="hidden"
-          variants={fade}
-        >
+        <Cards>
           <div className="card">
             <div className="icon">
               <img src={clock} alt={altimage} />
@@ -85,13 +75,16 @@ const Services = styled(StyledAbout)`
   }
   p {
     padding: 2rem 0rem 4rem 0rem;
-    width: 60%;
+    width: 70%;
   }
 `;
 
 const Cards = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 1300px) {
+    margin: 2rem 3rem;
+  }
 `;
 
 export default ServiceSection;

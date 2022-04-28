@@ -25,10 +25,15 @@ const Navbar = () => {
 const StyledNav = styled.nav`
   min-height: 10vh;
   display: flex;
+  margin: auto;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 10rem;
-
+  padding: 1rem 5rem;
+  position: sticky;
+  background-color: #353535;
+  opacity: 0.8;
+  top: 0;
+  z-index: 10;
   a {
     color: #fff;
     text-decoration: none;
@@ -42,8 +47,23 @@ const StyledNav = styled.nav`
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
   li {
-    position: relative;
-    padding-left: 10rem;
+    padding-left: 8rem;
+  }
+  @media (max-width: 1300px) {
+    flex-direction: column;
+    padding: 1rem;
+    .logo {
+      display: inline-block;
+      margin: 1rem;
+    }
+    ul {
+      padding: 2rem;
+      justify-content: space-around;
+      width: 100%;
+      li {
+        padding: 0;
+      }
+    }
   }
 `;
 
